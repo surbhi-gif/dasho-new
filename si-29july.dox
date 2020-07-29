@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dasho version="10.2.0">
+    <global>
+        <option>IGNORENOTFOUNDCLASSES</option>
+        <option>FORNAMEDETECTION</option>
+        <option>FORCE</option>
+    </global>
+    <inputpath>
+        <pathelement location="si-29july.jar"/>
+    </inputpath>
+    <classpath useJDKHome="true" JDKHome="/usr/lib/jvm/java-11-openjdk-11.0.7.10-4.el7_8.x86_64"/>
+    <entrypoints>
+        <library public="off">
+            <jar path="si-29july.jar"/>
+        </library>
+        <classes name="dasho.samples.HelloWorld">
+            <method name="main" signature="java.lang.String[]" modifiers="public static"/>
+        </classes>
+    </entrypoints>
+    <report path="${dasho.project}-report.txt"/>
+    <output merge="false">
+        <dir path="obfuscated"/>
+    </output>
+    <removal classes="unused" members="unused-non-public">
+        <debug/>
+        <attributes/>
+    </removal>
+    <renaming option="on" renameAnnotations="off">
+        <member-options keeppublics="true"/>
+        <mapping>
+            <mapreport path="${dasho.project}-mapreport.txt"/>
+            <mapoutput overwrite="true" path="${dasho.project}.map"/>
+        </mapping>
+    </renaming>
+    <optimization option="on"/>
+    <controlflow tryCatch="on" option="on"/>
+    <stringencrypt level="2" implementations="2" option="on">
+        <seOutput path="${dasho.project}-se.map"/>
+    </stringencrypt>
+    <make-synthetic value="private"/>
+</dasho>
