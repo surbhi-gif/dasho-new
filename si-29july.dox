@@ -8,7 +8,7 @@
     <inputpath>
         <pathelement location="si-29july.jar"/>
     </inputpath>
-    <classpath useJDKHome="true" JDKHome="/usr/lib/jvm/java-11-openjdk-11.0.7.10-4.el7_8.x86_64"/>
+    <classpath useJDKHome="true" JDKHome="/etc/alternatives/jre_11_openjdk"/>
     <entrypoints>
         <library public="off">
             <jar path="si-29july.jar"/>
